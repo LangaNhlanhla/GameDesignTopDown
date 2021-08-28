@@ -1038,7 +1038,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6830709, y: 1}
+    m_SensorSize: {x: 2.055118, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5068,7 +5068,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 10}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 3
+    widthMultiplier: 5
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -5082,8 +5082,8 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.94646895
-        value: 0.8566355
+        time: 0.49645674
+        value: 0
         inSlope: -0.7840526
         outSlope: -0.7840526
         tangentMode: 0
@@ -5092,7 +5092,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.42063522
+        value: 0.9571431
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -5131,10 +5131,10 @@ LineRenderer:
       m_Mode: 0
       m_NumColorKeys: 4
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 5
+    numCornerVertices: 10
+    numCapVertices: 10
     alignment: 0
-    textureMode: 0
+    textureMode: 2
     shadowBias: 0.5
     generateLightingData: 0
   m_UseWorldSpace: 0
@@ -5186,7 +5186,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6830709, y: 1}
+    m_SensorSize: {x: 2.055118, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5440,7 +5440,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b89c7ad2825c431438f5575bcf2e1458, type: 2}
+  - {fileID: 2100000, guid: 25382502148607b4cb4ce53c5bddd136, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10701,7 +10701,7 @@ Halo:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816563498}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -10759,7 +10759,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6830709, y: 1}
+    m_SensorSize: {x: 2.055118, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -18744,7 +18744,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6830709, y: 1}
+    m_SensorSize: {x: 2.055118, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -18760,7 +18760,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117322500}
-  m_LocalRotation: {x: 0.1848766, y: -0.000000016909773, z: 0.0000000031810576, w: 0.98276174}
+  m_LocalRotation: {x: 0.1848766, y: 0.000000016909773, z: -0.0000000031810576, w: 0.98276174}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
