@@ -22,16 +22,16 @@ public class ChangePlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Space works");
-            if (partcile.active== true)
+            if (partcile.activeInHierarchy == true)
             {
                 Debug.Log("Particle");
-                partcile.active = false;
-                cube.active = true;
+                partcile.SetActive(false);
+                cube.SetActive(true);
             }
             else
             {
-                partcile.active = true;
-                cube.active = false;
+                partcile.SetActive(true);
+                cube.SetActive(false);
             }
             
         }
