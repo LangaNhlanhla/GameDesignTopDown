@@ -20,7 +20,7 @@ public class HidingMechanic : MonoBehaviour
     {
         if(canHide && Input.GetKeyDown(KeyCode.LeftControl))
 		{
-            Physics.IgnoreLayerCollision(namelessPlayer, hunterEnemy, true);
+            Physics.IgnoreLayerCollision(6, 7, true);
 
             //Hide Player and Play Animation/Camera Stuff/sound Here
 
@@ -28,7 +28,7 @@ public class HidingMechanic : MonoBehaviour
 		}
         else
 		{
-            Physics.IgnoreLayerCollision(namelessPlayer, hunterEnemy, false);
+            Physics.IgnoreLayerCollision(6, 7, false);
 
             //Player Stops Hiding and Play Animation/sound Here
 
@@ -47,12 +47,18 @@ public class HidingMechanic : MonoBehaviour
 	private void OnTriggerEnter(Collider other)
 	{
         if (other.CompareTag(nameOfObjectToHideIn))
+        {
             canHide = true;
+            Debug.Log("Can Hide!");
+        }
 	}
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag(nameOfObjectToHideIn))
+        { 
             canHide = false;
+            Debug.Log("Can't Hide!");
+        }
     }
 }
