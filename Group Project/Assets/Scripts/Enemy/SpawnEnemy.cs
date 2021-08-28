@@ -6,14 +6,14 @@ public class SpawnEnemy : MonoBehaviour
 {
 
     [Header("Unity Handles")]
-    [SerializeField] GameObject enemyPatterns;
+    [SerializeField] GameObject hunterEnemy;
     [SerializeField] Transform spawnPoint;
+    [SerializeField] Transform parentForHunter;
 
     [Header("Floats")]
     [SerializeField] float mySpawns;
     [SerializeField] float startTime, enemySpawned, totalEnemies;
-    [SerializeField] float spawnTime = 5f;
-    [SerializeField] float spawnSince, decrTime, minTime = 0.65f;
+    [SerializeField] float decrTime, minTime = 0.65f;
 
     private void Start()
 	{
@@ -25,7 +25,8 @@ public class SpawnEnemy : MonoBehaviour
         if (mySpawns <= 0 && enemySpawned <= totalEnemies)
         {
             //int random = Random.Range(0, enemyPatterns.Length);
-            Instantiate(enemyPatterns, spawnPoint.position, Quaternion.identity);
+            GameObject fab = Instantiate(hunterEnemy, spawnPoint.position, Quaternion.identity);
+            fab.transform.SetParent(parentForHunter);
             enemySpawned++;
             mySpawns = startTime;
             if (startTime > minTime)

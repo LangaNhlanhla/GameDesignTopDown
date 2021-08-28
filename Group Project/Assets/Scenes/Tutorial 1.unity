@@ -41951,14 +41951,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9046d7047a529d344936f133317baefc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPatterns: {fileID: 4947962249222164540, guid: e759bf4498656bf45a106b83349cbbbd, type: 3}
+  hunterEnemy: {fileID: 4947962249222164540, guid: e759bf4498656bf45a106b83349cbbbd, type: 3}
   spawnPoint: {fileID: 706623397}
+  parentForHunter: {fileID: 717572997}
   mySpawns: 0
   startTime: 0
   enemySpawned: 0
   totalEnemies: 4
-  spawnTime: 2
-  spawnSince: 0
   decrTime: 0.3
   minTime: 0.65
 --- !u!4 &366438110 stripped
@@ -42222,6 +42221,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4947962249222164536, guid: e759bf4498656bf45a106b83349cbbbd, type: 3}
   m_PrefabInstance: {fileID: 1778067274}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &717572996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 717572997}
+  m_Layer: 0
+  m_Name: ParentForHunters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &717572997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717572996}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &837202663
 Mesh:
   m_ObjectHideFlags: 0
@@ -94229,7 +94258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4947962249222164536, guid: e759bf4498656bf45a106b83349cbbbd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -99.8
+      value: -73.5
       objectReference: {fileID: 0}
     - target: {fileID: 4947962249222164536, guid: e759bf4498656bf45a106b83349cbbbd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -94909,7 +94938,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126781688}
-  m_LocalRotation: {x: 0.1848766, y: 0.000000033819546, z: -0.0000000063621153, w: 0.98276174}
+  m_LocalRotation: {x: 0.1848766, y: -0.000000033819546, z: 0.0000000063621153, w: 0.98276174}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
