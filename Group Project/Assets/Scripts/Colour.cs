@@ -15,21 +15,23 @@ public class Colour : MonoBehaviour
     private void Start()
     {
         rend = GetComponent<MeshRenderer>();
-		for (int i = 0; i < defaultColor.Length; i++)
-		{
-            rend.sharedMaterials[i].color = defaultColors[i];
+        for (int i = 0; i < colours.Length; i++)
+        {
 
+            rend.sharedMaterials[i].color = newColours[i];
         }
     }
 
 	private void Update()
 	{
-        
-        //Stores List of Colors
-        for (int i = 0; i < colours.Length; i++)
+        for (int i = 0; i < defaultColor.Length; i++)
         {
             if (Input.GetKeyDown(KeyCode.Space))
-                rend.sharedMaterials[i].color = newColours[i];
+                rend.sharedMaterials[i].color = defaultColors[i];
+
         }
+
+        //Stores List of Colors
+       
     }
 }

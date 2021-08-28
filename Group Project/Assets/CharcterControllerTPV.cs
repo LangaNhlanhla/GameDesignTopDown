@@ -23,6 +23,8 @@ public class CharcterControllerTPV : MonoBehaviour
     public Transform Camera;
     public float CamLerp= 0.5f;
     float Torque;
+    //colour 
+   
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +60,8 @@ public class CharcterControllerTPV : MonoBehaviour
             move = Quaternion.Euler(0f, Angle, 0f) * Vector3.forward;
             controller.Move(move.normalized * Speed * Time.deltaTime);
         }
+
+       
         // Jumping 
         /*if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -82,4 +86,5 @@ public class CharcterControllerTPV : MonoBehaviour
         }
 
     }
+   
 }
