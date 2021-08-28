@@ -15,7 +15,12 @@ public class Colour : MonoBehaviour
     private void Start()
     {
         rend = GetComponent<MeshRenderer>();
+		for (int i = 0; i < defaultColor.Length; i++)
+		{
+            rend.sharedMaterials[i].color = defaultColor[i].color;
 
+        }
+       
 
       
 
