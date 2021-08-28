@@ -9,12 +9,14 @@ public class HunterAI : MonoBehaviour
     [Header("Unity Handles")]
     [SerializeField] NavMeshAgent hunterAgent;
     [SerializeField] Transform namelessPlayer;
+    [SerializeField] ChangePlayer changePlayerScript;
     [SerializeField] LayerMask ground, player;
     [SerializeField] Vector3 walkingPoint;
+    [SerializeField] GameObject pickUp;
 
     [Header("Booleans")]
+    public static bool hasTakenColour;
     [SerializeField] bool walkingSet;
-    [SerializeField] bool hasTakenColour;
     [SerializeField] bool playerInSight, canTakeColour;
 
     [Header("Floats")]
@@ -26,6 +28,8 @@ public class HunterAI : MonoBehaviour
 	{
         namelessPlayer = GameObject.FindWithTag("Player").transform;
         hunterAgent = GetComponent<NavMeshAgent>();
+        changePlayerScript = FindObjectOfType<ChangePlayer>();
+        pickUp = GameObject.FindGameObjectWithTag("Pickup");
 	}
 
 
@@ -39,7 +43,7 @@ public class HunterAI : MonoBehaviour
             StandAround();
         if (playerInSight && !canTakeColour)
             ChasePlayer();
-        if (playerInSight && canTakeColour)
+        if (playerInSight && canTakeColour && changePlayerScript.hasColour)
             TakeColour();
     }
 
@@ -74,6 +78,12 @@ public class HunterAI : MonoBehaviour
         if(!hasTakenColour)
 		{
             //Hunter Will Take Colour if player has colour
+            pickUp.SetActive(true);
+            Pickup pick = pickUp.GetComponent<Pickup>();
+            pick.isColour = false;
+            ChangePlayer.ColourIndex = 0;
+           // changePlayerScript.hasColour = false;
+            //Figure out Picking Up Boolean
             Debug.Log("Colour Taken");
             //Remove COlour from player (We should Lerp this)
 
@@ -94,7 +104,7 @@ public class HunterAI : MonoBehaviour
             walkingSet = true;
     }
 
-    void ResetTakingColour()
+    public void ResetTakingColour()
 	{
         hasTakenColour = false;
 	}

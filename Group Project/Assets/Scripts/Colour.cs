@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Colour : MonoBehaviour
 {
+    [Header("External Scripts")]
+    ShrineTrigger shrineTrigger;
 
+    [Header("Generic Elements")]
     public List<Color> defaultColors = new List<Color>();
     public List<Color> newColours = new List<Color>();
+
+    [Header("Unity Handles")]
     public Material[] colours, defaultColor;
     public MeshRenderer rend;
 
 
+	private void Awake()
+	{
+        shrineTrigger = FindObjectOfType<ShrineTrigger>();
+	}
 
-    private void Start()
+	private void Start()
     {
         rend = GetComponent<MeshRenderer>();
         for (int i = 0; i < colours.Length; i++)
@@ -26,7 +35,7 @@ public class Colour : MonoBehaviour
 	{
         for (int i = 0; i < defaultColor.Length; i++)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (shrineTrigger.colourCollected)
                 rend.sharedMaterials[i].color = defaultColors[i];
 
         }

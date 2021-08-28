@@ -8,6 +8,7 @@ TagManager:
   - particle
   - Mold
   - Pickup
+  - Shrine
   layers:
   - Default
   - TransparentFX

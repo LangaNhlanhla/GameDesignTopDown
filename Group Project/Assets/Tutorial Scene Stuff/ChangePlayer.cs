@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChangePlayer : MonoBehaviour
 {
+    [Header("Unity Handles")]
     public GameObject partcile;
     public GameObject cube;
     public GameObject prism;
@@ -12,14 +13,18 @@ public class ChangePlayer : MonoBehaviour
 
     [Header("Colour Input")]
     public Color color1;
+    public Color defaultColour;
     public static int ColourIndex = 0;
     // public GameObject Current;
     //bool isPart;
+    [Header("Booleans")]
+    public bool hasColour;
 
     // Start is called before the first frame update
     void Start()
     {
        // Current = partcile;
+
     }
 
     // Update is called once per frame
@@ -41,11 +46,6 @@ public class ChangePlayer : MonoBehaviour
             }
             
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            var m = Part.main;
-            m.startColor = new ParticleSystem.MinMaxGradient(Color.black, color1);
-        }
         //Colour change 
         CheckColour();
     }
@@ -54,10 +54,16 @@ public class ChangePlayer : MonoBehaviour
         if (ColourIndex == 0)
         {
             Debug.Log("Default");
+            partcile.SetActive(true);
+            cube.SetActive(false);
+            var m = Part.main;
+            m.startColor = new ParticleSystem.MinMaxGradient(Color.black, defaultColour);
         }
         if (ColourIndex == 1)
         {
             Debug.Log("Cube");
+            var m = Part.main;
+            m.startColor = new ParticleSystem.MinMaxGradient(Color.black, color1);
         }
         if (ColourIndex == 2)
         {

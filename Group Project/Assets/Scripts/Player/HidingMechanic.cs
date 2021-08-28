@@ -7,6 +7,7 @@ public class HidingMechanic : MonoBehaviour
     [Header("Unity Handles")]
     [SerializeField] LayerMask namelessPlayer;
     [SerializeField] LayerMask hidingSpot, hunterEnemy;
+    [SerializeField] GameObject UI_Hint;
 
     [Header("Booleans")]
     [SerializeField] bool canHide;
@@ -49,6 +50,7 @@ public class HidingMechanic : MonoBehaviour
         if (other.CompareTag(nameOfObjectToHideIn))
         {
             canHide = true;
+            UI_Hint.SetActive(canHide);
             Debug.Log("Can Hide!");
         }
 	}
@@ -58,6 +60,7 @@ public class HidingMechanic : MonoBehaviour
         if (other.CompareTag(nameOfObjectToHideIn))
         { 
             canHide = false;
+            UI_Hint.SetActive(canHide);
             Debug.Log("Can't Hide!");
         }
     }

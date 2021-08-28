@@ -7,10 +7,12 @@ using UnityEngine;
 public class CharcterControllerTPV : MonoBehaviour
 {
     public CharacterController controller;
+
     [Header("Movement")]
     public float Speed;
     public float Jump;
     Vector3 move;
+
    [Header("Gravity")]
     public float Gravity;
     public float FallVelocity;
@@ -23,8 +25,9 @@ public class CharcterControllerTPV : MonoBehaviour
     public Transform Camera;
     public float CamLerp= 0.5f;
     float Torque;
+
     //colour 
-   
+  
 
     // Start is called before the first frame update
     void Start()
