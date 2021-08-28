@@ -90,7 +90,7 @@ public class HunterAI : MonoBehaviour
 
         walkingPoint = new Vector3(transform.position.x + randomX, transform.position.y , transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkingPoint, -transform.up, -2f, ground))
+        if (Physics.Raycast(walkingPoint, -transform.up, 2f, ground))
             walkingSet = true;
     }
 

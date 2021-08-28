@@ -146,7 +146,7 @@ MonoBehaviour:
   hasTakenColour: 0
   playerInSight: 0
   canTakeColour: 0
-  walkSetRange: 5
+  walkSetRange: 10
   timeBetweenTakingColour: 0.5
-  sightRange: 3.5
-  takeColourRange: 3.3
+  sightRange: 15
+  takeColourRange: 10
