@@ -22,7 +22,7 @@ public class HidingMechanic : MonoBehaviour
 		{
             Physics.IgnoreLayerCollision(namelessPlayer, hunterEnemy, true);
 
-            //Hide Player and Play Animation/sound Here
+            //Hide Player and Play Animation/Camera Stuff/sound Here
 
             currentlyHiding = true;
 		}
