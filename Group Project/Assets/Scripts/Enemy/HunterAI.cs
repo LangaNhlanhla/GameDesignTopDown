@@ -9,7 +9,7 @@ public class HunterAI : MonoBehaviour
 {
     [Header("Unity Handles")]
     [SerializeField] NavMeshAgent hunterAgent;
-    [SerializeField] Transform namelessPlayer;
+    public Transform namelessPlayer;
     [SerializeField] ChangePlayer changePlayerScript;
     [SerializeField] LayerMask ground, player, environmment;
     [SerializeField] Vector3 walkingPoint;
@@ -18,17 +18,21 @@ public class HunterAI : MonoBehaviour
     [Header("Booleans")]
     public static bool hasTakenColour;
     [SerializeField] bool walkingSet;
-    [SerializeField] bool playerInSight, canTakeColour;
+    [SerializeField] bool canTakeColour;
+    public bool playerInSight;
 
     [Header("Floats")]
     [SerializeField] float walkSetRange;
     [SerializeField] float timeBetweenTakingColour;
-    [SerializeField] float sightRange, takeColourRange;
+    [SerializeField] float takeColourRange;
     
     [Range(0,360f)]
-    [SerializeField] float radius, angle;
+    public float angle;
 
-	private void Awake()
+    [Range(0, 360f)]
+    public float sightRange;
+
+    private void Awake()
 	{
         namelessPlayer = GameObject.FindWithTag("Player").transform;
         hunterAgent = GetComponent<NavMeshAgent>();
@@ -74,6 +78,7 @@ public class HunterAI : MonoBehaviour
 
     void ChasePlayer()
     {
+        Debug.Log("Chasing");
         hunterAgent.SetDestination(namelessPlayer.position);
     }
 
@@ -112,7 +117,7 @@ public class HunterAI : MonoBehaviour
     }
     void AngleSight()
 	{
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, player);
+        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, sightRange, player);
 
         if (rangeChecks.Length != 0)
         {
@@ -152,38 +157,4 @@ public class HunterAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightRange);
 	}
 }
-/*
-[CustomEditor(typeof(HunterAI))]
-public class DrawWireArc : Editor
-{
-    void OnSceneGUI()
-    {
-        Handles.color = Color.red;
-        HunterAI myObj = (HunterAI)namelessPlayer;
-        Handles.DrawWireArc(myObj.transform.position, myObj.transform.up, Vector3.forward, 180, myObj.angle);
-        myObj.angle = (float)Handles.ScaleValueHandle(myObj.angle, myObj.transform.position + myObj.transform.forward * myObj.angle, myObj.transform.rotation, 1, Handles.ConeHandleCap, 1);
 
-        Vector3 viewAngle01 = DirectionFromAngle(myObj.transform.eulerAngles.y, -myObj.angle / 2);
-        Vector3 viewAngle02 = DirectionFromAngle(myObj.transform.eulerAngles.y, myObj.angle / 2);
-
-        Handles.color = Color.yellow;
-        Handles.DrawLine(myObj.transform.position, myObj.transform.position + viewAngle01 * myObj.radius);
-        Handles.DrawLine(myObj.transform.position, myObj.transform.position + viewAngle02 * myObj.radius);
-
-
-
-        if(myObj.playerInSight)
-		{
-            Handles.color = Color.blue;
-            Handles.DrawLine(myObj.transform.position, myObj.namelessPlayer.position);
-		}
-    }
-
-    private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
-    {
-        angleInDegrees += eulerY;
-
-        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-    }
-
-}*/

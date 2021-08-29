@@ -86,6 +86,14 @@ PrefabInstance:
       propertyPath: m_BaseOffset
       value: 0.62
       objectReference: {fileID: 0}
+    - target: {fileID: 4947962249222164538, guid: e759bf4498656bf45a106b83349cbbbd, type: 3}
+      propertyPath: angle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947962249222164538, guid: e759bf4498656bf45a106b83349cbbbd, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4947962249222164540, guid: e759bf4498656bf45a106b83349cbbbd, type: 3}
       propertyPath: m_Name
       value: HunterMain
