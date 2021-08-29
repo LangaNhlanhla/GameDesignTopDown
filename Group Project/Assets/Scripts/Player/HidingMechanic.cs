@@ -12,10 +12,13 @@ public class HidingMechanic : MonoBehaviour
 
     [Header("Booleans")]
     [SerializeField] bool canHide;
-    [SerializeField] bool currentlyHiding;
+    public bool currentlyHiding;
 
     [Header("Generic Elements")]
     [SerializeField] string nameOfObjectToHideIn;
+
+    [Header("Floats")]
+    [SerializeField] float range;
 
     // Update is called once per frame
     void Update()
@@ -28,14 +31,15 @@ public class HidingMechanic : MonoBehaviour
 
             currentlyHiding = true;
 		}
-        else
+      /*  else
 		{
             Physics.IgnoreLayerCollision(6, 7, false);
 
             //Player Stops Hiding and Play Animation/sound Here
 
             currentlyHiding = false;
-        }
+        }*/
+
 
     }
 
@@ -54,12 +58,6 @@ public class HidingMechanic : MonoBehaviour
             canHide = true;
             UI_Hint.SetActive(canHide);
             Debug.Log("Can Hide!");
-
-            if (currentlyHiding)
-            {
-                DisableCollider dis = other.GetComponent<DisableCollider>();
-                dis.Disbable();
-            }
         }
 	}
 
@@ -70,8 +68,13 @@ public class HidingMechanic : MonoBehaviour
             canHide = false;
             UI_Hint.SetActive(canHide);
             Debug.Log("Can't Hide!");
-           // DisableCollider dis = other.GetComponent<DisableCollider>();
-           // dis.EnableColliders();
+            currentlyHiding = false;
         }
     }
+
+	private void OnDrawGizmosSelected()
+	{
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, range);
+	}
 }

@@ -5,13 +5,32 @@ using UnityEngine;
 public class DisableCollider : MonoBehaviour
 {
 	[Header("Unity Handles")]
-	[SerializeField] GameObject[] ColliderObjs;
-   public void Disbable()
+	[SerializeField] Collider[] ColliderObjs;
+
+	[Header("Externa Scripts")]
+	HidingMechanic hm;
+
+	private void Start()
+	{
+		hm = FindObjectOfType<HidingMechanic>();
+	}
+	private void Update()
+	{
+		if(hm.currentlyHiding)
+		{
+			Disbable();
+		}
+		else
+		{
+			EnableColliders();
+		}
+	}
+	public void Disbable()
 	{
 		for (int i = 0; i < ColliderObjs.Length; i++)
 		{
 			Debug.Log("Disable");
-			ColliderObjs[i].SetActive(false);
+			ColliderObjs[i].enabled = false;
 		}
 	}
 
@@ -20,7 +39,7 @@ public class DisableCollider : MonoBehaviour
 		for (int i = 0; i < ColliderObjs.Length; i++)
 		{
 			Debug.Log("Enable");
-			ColliderObjs[i].SetActive(true);
+			ColliderObjs[i].enabled = true;
 		}
 	}
 }

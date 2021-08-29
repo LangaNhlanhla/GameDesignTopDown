@@ -69,11 +69,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380556061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 9.5}
+  m_LocalPosition: {x: -0, y: 0, z: -0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7221251117596190334}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &380556063
 BoxCollider:
@@ -86,7 +86,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.71, y: 5, z: 7}
+  m_Size: {x: 6.71, y: 5, z: 22}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &577838766
 GameObject:
@@ -220,50 +220,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 7, z: 0.95}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1804853434
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1804853435}
-  - component: {fileID: 1804853436}
-  m_Layer: 9
-  m_Name: Trigger
-  m_TagString: Mold
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1804853435
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804853434}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7221251117596190334}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1804853436
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804853434}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.71, y: 5, z: 7}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6353961965369622533
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +252,7 @@ Transform:
   - {fileID: 244187615}
   - {fileID: 1423506437}
   m_Father: {fileID: 7221251117596190334}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7221251117596190324
 GameObject:
@@ -312,8 +268,8 @@ GameObject:
   - component: {fileID: 7221251117596190331}
   - component: {fileID: 7221251117596190330}
   - component: {fileID: 7221251117596190325}
-  - component: {fileID: 515269383}
   - component: {fileID: 9167337149464333601}
+  - component: {fileID: 1013704741}
   m_Layer: 9
   m_Name: RED CUBE MOLD
   m_TagString: Mold
@@ -337,7 +293,6 @@ Transform:
   - {fileID: 7221251118872494572}
   - {fileID: 7221251118042682619}
   - {fileID: 7221251118747117654}
-  - {fileID: 1804853435}
   - {fileID: 380556062}
   - {fileID: 5305371090105551776}
   m_Father: {fileID: 0}
@@ -3214,7 +3169,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2459
+  m_VersionIndex: 2480
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3309,7 +3264,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!208 &515269383
+--- !u!114 &9167337149464333601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221251117596190324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842f4d0600eb87746a36b5275555ea27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColliderObjs:
+  - {fileID: 918635802}
+  - {fileID: 577838768}
+--- !u!208 &1013704741
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3325,21 +3295,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: -0.001}
   m_TimeToStationary: 0.5
---- !u!114 &9167337149464333601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7221251117596190324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 842f4d0600eb87746a36b5275555ea27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ColliderObjs:
-  - {fileID: 918635800}
-  - {fileID: 577838766}
 --- !u!1 &7221251117834847037
 GameObject:
   m_ObjectHideFlags: 0
