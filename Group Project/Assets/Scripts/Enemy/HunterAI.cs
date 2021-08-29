@@ -152,7 +152,7 @@ public class HunterAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightRange);
 	}
 }
-
+/*
 [CustomEditor(typeof(HunterAI))]
 public class DrawWireArc : Editor
 {
@@ -185,4 +185,5 @@ public class DrawWireArc : Editor
 
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
+*/
 }
