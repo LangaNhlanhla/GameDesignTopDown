@@ -70,8 +70,8 @@ public class HidingMechanic : MonoBehaviour
             canHide = false;
             UI_Hint.SetActive(canHide);
             Debug.Log("Can't Hide!");
-            DisableCollider dis = other.GetComponent<DisableCollider>();
-            dis.EnableColliders();
+           // DisableCollider dis = other.GetComponent<DisableCollider>();
+           // dis.EnableColliders();
         }
     }
 }
