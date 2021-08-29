@@ -94,6 +94,10 @@ PrefabInstance:
       propertyPath: sightRange
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 4947962249222164538, guid: e759bf4498656bf45a106b83349cbbbd, type: 3}
+      propertyPath: environmment.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 4947962249222164540, guid: e759bf4498656bf45a106b83349cbbbd, type: 3}
       propertyPath: m_Name
       value: HunterMain
