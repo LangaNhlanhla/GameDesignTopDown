@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 7221251117596190330}
   - component: {fileID: 7221251117596190325}
   - component: {fileID: 515269383}
+  - component: {fileID: 9167337149464333601}
   m_Layer: 8
   m_Name: RED CUBE MOLD
   m_TagString: Mold
@@ -3213,7 +3214,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2441
+  m_VersionIndex: 2450
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3324,6 +3325,21 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: -0.001}
   m_TimeToStationary: 0.5
+--- !u!114 &9167337149464333601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221251117596190324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842f4d0600eb87746a36b5275555ea27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColliderObjs:
+  - {fileID: 918635800}
+  - {fileID: 577838766}
 --- !u!1 &7221251117834847037
 GameObject:
   m_ObjectHideFlags: 0

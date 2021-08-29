@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hunterAgent: {fileID: 4947962249222164537}
   namelessPlayer: {fileID: 0}
+  changePlayerScript: {fileID: 0}
   ground:
     serializedVersion: 2
     m_Bits: 8
@@ -142,8 +143,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   walkingPoint: {x: 0, y: 0, z: 0}
+  pickUp: {fileID: 0}
   walkingSet: 0
-  hasTakenColour: 0
   playerInSight: 0
   canTakeColour: 0
   walkSetRange: 10

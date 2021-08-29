@@ -8,6 +8,7 @@ public class HidingMechanic : MonoBehaviour
     [SerializeField] LayerMask namelessPlayer;
     [SerializeField] LayerMask hidingSpot, hunterEnemy;
     [SerializeField] GameObject UI_Hint;
+    
 
     [Header("Booleans")]
     [SerializeField] bool canHide;
@@ -35,6 +36,7 @@ public class HidingMechanic : MonoBehaviour
 
             currentlyHiding = false;
         }
+
     }
 
 	private void FixedUpdate()
@@ -52,6 +54,12 @@ public class HidingMechanic : MonoBehaviour
             canHide = true;
             UI_Hint.SetActive(canHide);
             Debug.Log("Can Hide!");
+
+            if (currentlyHiding)
+            {
+                DisableCollider dis = other.GetComponent<DisableCollider>();
+                dis.Disbable();
+            }
         }
 	}
 
@@ -62,6 +70,8 @@ public class HidingMechanic : MonoBehaviour
             canHide = false;
             UI_Hint.SetActive(canHide);
             Debug.Log("Can't Hide!");
+            DisableCollider dis = other.GetComponent<DisableCollider>();
+            dis.EnableColliders();
         }
     }
 }
